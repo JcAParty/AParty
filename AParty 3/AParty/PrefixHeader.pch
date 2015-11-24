@@ -1,0 +1,25 @@
+//
+//  PrefixHeader.pch
+//  AParty
+//
+//  Created by JConnor on 11/12/15.
+//  Copyright (c) 2015 JConnor. All rights reserved.
+//
+
+#ifndef AParty_PrefixHeader_pch
+#define AParty_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+#import "LoginViewController.h"
+#import "YKSConstants.h"
+#import "UIButton+Block.h"
+
+#define kScreenW [UIScreen mainScreen].bounds.size.width
+#define kScreenH [UIScreen mainScreen].bounds.size.height
+
+
+
+#endif
