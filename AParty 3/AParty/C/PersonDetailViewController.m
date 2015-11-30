@@ -198,7 +198,7 @@
 //定义每个UICollectionView 的 margin
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(10, (kScreenW-5*2)*0.033, 10, 0);
+    return UIEdgeInsetsMake(10, (kScreenW-5*2)*0.043, 10, 0);
 }
 #pragma mark --UICollectionViewDelegate
 //UICollectionView被选中时调用的方法

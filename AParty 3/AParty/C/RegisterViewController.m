@@ -55,6 +55,7 @@
     
     return YES;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -93,7 +94,7 @@
 
     
     
-    _getVerifyCodeBtn = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_verifyCodeTF.bounds)-10, 0, 100,30 )];
+    _getVerifyCodeBtn = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_verifyCodeTF.bounds)-100, 0, 100,30 )];
     _getVerifyCodeBtn.layer.cornerRadius = 6;
     _getVerifyCodeBtn.clipsToBounds = YES;
     [_verifyCodeTF addSubview:_getVerifyCodeBtn];

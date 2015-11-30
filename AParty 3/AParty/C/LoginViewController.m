@@ -10,7 +10,7 @@
 #import "RegisterViewController.h"
 
 #import "UMSocial.h"
-
+#import "FindPasswordViewController.h"
 
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *telephoneTF;
@@ -21,6 +21,12 @@
 
 @implementation LoginViewController
 - (IBAction)forgetPasswordClick:(UIButton *)sender {
+    
+    FindPasswordViewController *vc = [[UIStoryboard storyboardWithName:@"PersonInfoTableViewController" bundle:nil]instantiateViewControllerWithIdentifier:@"FindPasswordViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+    
 }
 - (IBAction)loginClick:(UIButton *)sender {
     [self.view endEditing:YES];

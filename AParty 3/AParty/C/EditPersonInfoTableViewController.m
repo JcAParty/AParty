@@ -8,7 +8,9 @@
 
 #import "EditPersonInfoTableViewController.h"
 
-@interface EditPersonInfoTableViewController ()
+@interface EditPersonInfoTableViewController ()<UIPickerViewDataSource,UIPickerViewDelegate>
+@property(nonatomic,strong)UIPickerView *pickView;
+@property (weak, nonatomic) IBOutlet UITextField *ageTF;
 
 @end
 
@@ -17,36 +19,75 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(rightClick)];
+    self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH)];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _pickView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, kScreenH-200, 0, 200)];
+    _pickView.delegate = self;
+    _pickView.dataSource = self;
+    _ageTF.inputView = _pickView;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap)];
+    [self.view addGestureRecognizer:tap];
     
     
-    
-    
-    
-    
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)tap{
+    
+    [self.view endEditing:YES];
 }
 
+-(void)rightClick{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 66)];
+    
+    
+    UILabel *la = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 44)];
+//    [view addSubview:la];
+    la.textColor = [UIColor whiteColor];
+    la.text = (section==0?@"修改名字  NAME":@"年龄  AGE");
+    return la;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 1;
+}
+
+#pragma PickView 
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+        return 100;
+    
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
+        return [NSString stringWithFormat:@"%zd岁", row];
+    
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+        //        _age = row + 1;
+        _ageTF.text = [NSString stringWithFormat:@"%zd岁", row];
+}
+
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 
 /*

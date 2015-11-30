@@ -96,6 +96,79 @@
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <viewController storyboardIdentifier="FindPasswordViewController" id="mFc-0o-YU4" customClass="FindPasswordViewController">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="w8d-tQ-utx"/>
+                <viewControllerLayoutGuide type="bottom" id="CsV-O8-OYv"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="WyZ-0b-Bsz">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VrK-H0-PwQ">
+                        <rect key="frame" x="20" y="60" width="280" height="44"/>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.18823529410000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="4L7-pV-zGE"/>
+                        </constraints>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SLD-5G-V8u">
+                        <rect key="frame" x="20" y="124" width="280" height="44"/>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.18823529410000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="Zsi-Qg-Mbe"/>
+                        </constraints>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsK-Vl-eHa">
+                        <rect key="frame" x="20" y="198" width="280" height="44"/>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.18823529410000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="aya-lx-xwM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <state key="normal" title="下一步"/>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="VrK-H0-PwQ" firstAttribute="top" secondItem="w8d-tQ-utx" secondAttribute="bottom" constant="40" id="A1K-u5-fZl"/>
+                    <constraint firstItem="VrK-H0-PwQ" firstAttribute="leading" secondItem="WyZ-0b-Bsz" secondAttribute="leading" constant="20" id="D6R-K1-HTn"/>
+                    <constraint firstItem="DsK-Vl-eHa" firstAttribute="top" secondItem="SLD-5G-V8u" secondAttribute="bottom" constant="30" id="LLq-lg-JXM"/>
+                    <constraint firstItem="SLD-5G-V8u" firstAttribute="top" secondItem="VrK-H0-PwQ" secondAttribute="bottom" constant="20" id="Okx-bJ-hqD"/>
+                    <constraint firstItem="DsK-Vl-eHa" firstAttribute="leading" secondItem="WyZ-0b-Bsz" secondAttribute="leading" constant="20" id="SxF-bh-LJm"/>
+                    <constraint firstAttribute="trailing" secondItem="SLD-5G-V8u" secondAttribute="trailing" constant="20" id="WG1-qr-84x"/>
+                    <constraint firstItem="SLD-5G-V8u" firstAttribute="leading" secondItem="WyZ-0b-Bsz" secondAttribute="leading" constant="20" id="XpP-bt-ejx"/>
+                    <constraint firstAttribute="trailing" secondItem="DsK-Vl-eHa" secondAttribute="trailing" constant="20" id="lCo-9U-Jel"/>
+                    <constraint firstAttribute="trailing" secondItem="VrK-H0-PwQ" secondAttribute="trailing" constant="20" id="vz0-Ii-0yK"/>
+                </constraints>
+            </view>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="nextStepButton" destination="DsK-Vl-eHa" id="uHh-D2-BRm"/>
+                <outlet property="telephoneTF" destination="VrK-H0-PwQ" id="Fay-cb-C8w"/>
+                <outlet property="verifyCodeTF" destination="SLD-5G-V8u" id="ifg-lg-hLg"/>
+            </connections>
+            <point key="canvasLocation" x="833" y="383"/>
+        </viewController>
+        <viewController id="v68-F0-Ucy" customClass="ResetPasswordViewController">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="YxB-ER-dYC"/>
+                <viewControllerLayoutGuide type="bottom" id="wIx-nh-XYY"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="MCw-nY-3VF">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            </view>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="1248" y="383"/>
+        </viewController>
     </objects>
     <resources>
         <image name="dengrukuang.png" width="220" height="30"/>

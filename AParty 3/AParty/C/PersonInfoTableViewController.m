@@ -15,6 +15,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *sexTF;
 @property (strong, nonatomic) UIPickerView *sexPickerView;
 @property (strong, nonatomic) UIPickerView *agePickserView;
+@property (strong, nonatomic) UIPickerView *cityPickserView;
+@property (weak, nonatomic) IBOutlet UITextField *citySelectTF;
+
+@property (nonatomic,strong)NSArray *citys1;
+@property (nonatomic,strong)NSArray *citys2;
+@property (nonatomic,strong)NSArray *citysCurrentSelectArray;
+
 
 @end
 
@@ -50,9 +57,31 @@
     _agePickserView.dataSource = self;
     _agePickserView.delegate = self;
     _yearsTF.inputView = _agePickserView;
-
+    
+    _citySelectTF.inputView = self.cityPickserView;
     
 }
+
+#pragma todo
+-(UIPickerView *)cityPickserView{
+    if (!_cityPickserView) {
+        _cityPickserView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
+        _cityPickserView.dataSource = self;
+        _cityPickserView.delegate = self;
+        _citys1 = @[];
+        
+        _citys2 = @[@[],@[]];
+        
+    }
+    
+    
+    
+    
+    
+    return _cityPickserView;
+}
+
+
 
 -(void)tapclick{
     [self.view endEditing:YES];
@@ -66,15 +95,23 @@
 
 //#pragma mark - UIPickerViewDataSource
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    if ([pickerView isEqual:_cityPickserView]) {
+        return 2;
+    }
     return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if (pickerView == _sexPickerView) {
         return 2;
-    } else {
+    }
+    if (pickerView == _agePickserView) {
         return 80;
     }
+    if (pickerView == _cityPickserView) {
+        return 80;
+    }
+    return 1111;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {

@@ -94,7 +94,7 @@
         make.height.equalTo(@15);
     }];
     
-    _headerBackgroundIV.image = [UIImage imageNamed:@"zhanwei"];
+    _headerBackgroundIV.image = [UIImage imageNamed:@"bj"];
     _portHeaderIV.image = [UIImage imageNamed:@"1"];
     _nameLabel.text = @"Name";
     _addressLabel.text = @"address";
@@ -141,16 +141,24 @@
     
     
 }
-
+//右上角设置功能
 -(void)setNAV{
     UIButton *rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 24, 24)];
     [rightBtn addAction:^(UIButton *btn) {
+        UIButton *clearButton = [[UIButton alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        [self.view.window addSubview:clearButton];
+        [clearButton addAction:^(UIButton *btn) {
+            [btn removeFromSuperview];
+        } forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        
         UIView *setView = [[UIView alloc]init];
-        [self.view.window addSubview:setView];
+        [clearButton addSubview:setView];
         setView.backgroundColor = [UIColor blackColor];
         setView.alpha = 0.7;
         [setView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.view).offset(20);
+            make.top.equalTo(self.view).offset(64);
             make.left.equalTo(self.view);
             make.right.equalTo(self.view);
             make.bottom.equalTo(_headerBackgroundIV).multipliedBy(0.9);
@@ -274,9 +282,10 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-//    LoginViewController *vc = [[LoginViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
     [super viewDidAppear:YES];
+
+    LoginViewController *vc = [[LoginViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
     
 //    [self.view addSubview:self.collectionView];
     

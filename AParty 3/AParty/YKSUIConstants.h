@@ -10,7 +10,7 @@
 #define YueKangSong_YKSUIConstants_h
 
 #import <MJRefresh/MJRefresh.h>
-#import "UIViewController+Common.h"
+//#import "UIViewController+Common.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIAlertView+Block.h"
 

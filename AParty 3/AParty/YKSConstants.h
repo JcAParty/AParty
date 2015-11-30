@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 YKS. All rights reserved.
 //
 
-//#import "YKSUIConstants.h"
+#import "YKSUIConstants.h"
 
 #ifdef DEBUG
 #	define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
@@ -22,7 +22,7 @@ colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-static const CGFloat kCycleHeight = 140;
+//static const CGFloat kCycleHeight = 140;
 
 #define SCREEN_WIDTH                    [[UIScreen mainScreen] bounds].size.width
 #define SCRENN_HEIGHT                   [[UIScreen mainScreen] bounds].size.height
@@ -66,19 +66,19 @@ static const CGFloat kCycleHeight = 140;
 #define kDefaultTimeOutInterval 10.0f
 
 
-typedef NS_ENUM(NSInteger, YKSOrderStatus) {
-    YKSOrderStatusCancel = -1, //订单取消
-    YKSOrderStatusPending = 1, //待处理
-    YKSOrderStatusConfirm = 2, //卖家确认
-    YKSOrderStatusShipping = 3, //配送中
-    YKSOrderStatusReceived = 4 //订单已经签收
-};
-
-typedef NS_ENUM(NSInteger, YKSCouponStatus) {
-    YKSCouponStatusNever = 0,  // 未使用
-    YKSCouponStatusDid =  1,  // 已使用
-    YKSCouponStatusPast = 2   // 已过期
-};
+//typedef NS_ENUM(NSInteger, YKSOrderStatus) {
+//    YKSOrderStatusCancel = -1, //订单取消
+//    YKSOrderStatusPending = 1, //待处理
+//    YKSOrderStatusConfirm = 2, //卖家确认
+//    YKSOrderStatusShipping = 3, //配送中
+//    YKSOrderStatusReceived = 4 //订单已经签收
+//};
+//
+//typedef NS_ENUM(NSInteger, YKSCouponStatus) {
+//    YKSCouponStatusNever = 0,  // 未使用
+//    YKSCouponStatusDid =  1,  // 已使用
+//    YKSCouponStatusPast = 2   // 已过期
+//};
 
 
 

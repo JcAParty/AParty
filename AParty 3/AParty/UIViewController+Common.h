@@ -6,8 +6,7 @@
 //  Copyright (c) 2014年 . All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+#import <MBProgressHUD/MBProgressHUD.h>
 @interface UIViewController (Common)
 
 - (void)showProgress;

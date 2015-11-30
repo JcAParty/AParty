@@ -10,7 +10,7 @@
 #import "HomeViewController.h"
 #import "MassageViewController.h"
 #import "MomentsViewController.h"
-
+#import "ItemForMessageVC.h"
 @interface MyTabBarViewController ()
 
 @end
@@ -26,7 +26,7 @@
 - (void)customVC
 {
     HomeViewController *homeVC = [[HomeViewController alloc] init];
-    MassageViewController *massageVC = [[MassageViewController alloc] init];
+    ItemForMessageVC *massageVC = [[ItemForMessageVC alloc] init];
     MomentsViewController *momentsVC = [UIStoryboard storyboardWithName:@"MomentsView" bundle:nil].instantiateInitialViewController;
     MyViewController *myVC = [[MyViewController alloc] init];
     

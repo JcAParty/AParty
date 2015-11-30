@@ -55,12 +55,12 @@
         [_mapView setTrafficEnabled:YES];
     _mapView.delegate = self;
 
-        _mapManager = [[BMKMapManager alloc]init];
-        // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
-        BOOL ret = [_mapManager start:BaiduMapAK  generalDelegate:nil];
-        if (!ret) {
-            NSLog(@"manager start failed!");
-        }
+//        _mapManager = [[BMKMapManager alloc]init];
+//        // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+//        BOOL ret = [_mapManager start:BaiduMapAK  generalDelegate:nil];
+//        if (!ret) {
+//            NSLog(@"manager start failed!");
+//        }
     _localManager = [[BMKLocationService alloc]init];
     _localManager.delegate = self;
     //启动LocationService

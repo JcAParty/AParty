@@ -4,8 +4,7 @@
 //
 //  Created by JConnor on 11/11/15.
 //  Copyright (c) 2015 JConnor. All rights reserved.
-//
-#import "UMSocialWechatHandler.h"
+
 #import "AppDelegate.h"
 #import "MyTabBarViewController.h"
 #import "HomeViewController.h"
